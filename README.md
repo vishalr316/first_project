@@ -1,2 +1,2 @@
 # first_project
-Django practice projects here
+Udemy course Django practice project's and the tasks are posted here
