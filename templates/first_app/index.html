@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>background picture</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/mystyle.css' %}">
+</head>
+<body>
+	<h1>Inserted picture using Django</h1>
+	<img src="{% static "images/background-color.png" %}" alt="image from django" height="200" width="200">
+
+	<!--
+		Below code loads the image file from first_project/static/images/
+		<img src="<DJANGO_JINJA_PERCENT_SYMBOL static 'images/background-color.png' DJANGO_JINJA_PERCENT_SYMBOL>" alt="image from django"> 
+	-->
+
+	{{ insert_me }}
+
+</body>
+</html>
