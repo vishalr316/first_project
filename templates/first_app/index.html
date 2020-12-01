@@ -1,21 +1,38 @@
 <!DOCTYPE html>
 {% load static %}
-<html>
+
+<html lang="en">
 <head>
-	<meta charset="utf-8">
-	<title>background picture</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Django level two</title>
 	<link rel="stylesheet" type="text/css" href="{% static 'css/mystyle.css' %}">
 </head>
 <body>
-	<h1>Inserted picture using Django</h1>
-	<img src="{% static "images/background-color.png" %}" alt="image from django" height="200" width="200">
+	<h1>Hi welcome to Django level two!</h1>
+	<h2>Here are your access records:</h2>
 
-	<!--
-		Below code loads the image file from first_project/static/images/
-		<img src="<DJANGO_JINJA_PERCENT_SYMBOL static 'images/background-color.png' DJANGO_JINJA_PERCENT_SYMBOL>" alt="image from django"> 
-	-->
+	<div class="djangotwo">
+		{% if access_records %}
+		<table>
+			<thead>
+				<th>Site name</th>
+				<th>Date accessed</th>
+			</thead>
 
-	{{ insert_me }}
+			{% for acc in access_records %}
+			<tr>
+				<td>{{ acc.name }}</td>
+				<td> {{ acc.date }} </td>
+			</tr>
+			{% endfor %}
+		</table>
+
+		{% else %}
+		<p>No access records found</p>
+		{% endif %}
+
+	</div>
 
 </body>
 </html>
